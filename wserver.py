@@ -4,17 +4,17 @@ import tornado.ioloop
 import tornado.web
 import socket
 
-  #This is Websocket server uses the Tornado websocket handler
+  
 class WebSHandler(tornado.websocket.WebSocketHandler):
     def open(self):
         print 'connection opened'
 
-      #override this method to define the action to be performed on receiving a message from cli
-      # override this method to define the action send someting to the client
+     
     def write_message(self, message):
-        self.write_message("sdfs")
-    # def on_close(self):
-    #     print 'connection closed'
+        self.write_message("Hey! the server is working")
+    
+    def on_close(self):
+       print 'connection closed'
 
     def check_origin(self, origin):
         return True
